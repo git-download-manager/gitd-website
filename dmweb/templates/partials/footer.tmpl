@@ -1,0 +1,78 @@
+ <div class="section pt-5 pb-3 border-top">
+    <div class="container">
+        <div class="d-md-flex">
+            <!--<a class="navbar-brand flex-md-fill" href="/" title="Git Download Manager">GITD</a>-->
+
+            <nav class="nav nav-footer flex-sm-column flex-md-column flex-md-fill">
+                <a class="nav-link disabled"><strong>Browsers Extension</strong></a>
+                <a class="nav-link" href="{{option "chrome-store-url"}}" target="_blank">Chrome Extension</a>
+                <a class="nav-link" href="{{option "firefox-addons-url"}}" target="_blank">Firefox Addon</a>
+                <a class="nav-link" href="{{option "microsoft_edge-addons-url"}}" target="_blank">Microsoft Edge Addon</a>
+            </nav>
+            
+            <nav class="nav nav-footer flex-sm-column flex-md-column flex-md-fill">
+                <a class="nav-link disabled"><strong>Open Source</strong></a>
+                <a class="nav-link" href="https://github.com/git-download-manager" target="_blank">Gitd Organization</a>
+                <a class="nav-link" href="https://github.com/git-download-manager/gitd-extension" target="_blank">Gitd Extension</a>
+                <a class="nav-link" href="https://github.com/git-download-manager/gitd-website" target="_blank">Gitd Webpage</a>
+            </nav>
+
+            <nav class="nav nav-footer flex-sm-column flex-md-column flex-md-fill">
+                <a class="nav-link disabled"><strong>Advanced</strong></a>
+                <a class="nav-link text-muted" href="/p/contact-me" title="Please send me a message for advanced usage">Gitd Server*</a>
+                <a class="nav-link text-muted" href="/p/contact-me" title="Please send me a message for advanced usage">Gitd Api*</a>
+                <a class="nav-link text-muted" href="/p/contact-me" title="Please send me a message for advanced usage">Gitd Cli*</a>
+            </nav>
+            
+            <div class="navbar-text ml-auto mr-3">
+                <span class="text-center">Referral Links</span>
+                <a href="https://hetzner.cloud/?ref=0RPw5XrOHCyq" class="btn btn-md btn-block btn-secondary mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-haze2" viewBox="0 0 16 16">
+                        <path d="M8.5 3a4.002 4.002 0 0 0-3.8 2.745.5.5 0 1 1-.949-.313 5.002 5.002 0 0 1 9.654.595A3 3 0 0 1 13 12H4.5a.5.5 0 0 1 0-1H13a2 2 0 0 0 .001-4h-.026a.5.5 0 0 1-.5-.445A4 4 0 0 0 8.5 3zM0 7.5A.5.5 0 0 1 .5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm2 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-2 4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    <span>Hetzner.com</span>
+                </a>
+                <a href="https://www.digitalocean.com/?refcode=7d2b60c06d34&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt="DigitalOcean Referral Badge" /></a>
+            </div>
+            
+            {{if ne (option "buymeacoffee") "" }}
+            <div class="navbar-text ml-auto">
+                <span class="text-center">40 Years of Memory</span>
+                <a href="{{option "buymeacoffee"}}" title="the memory of a cup of coffee lasts for forty years." class="btn btn-warning btn-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-cup-hot" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6H.5ZM13 12.5a2.01 2.01 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5ZM2.64 13.825 1.123 7h11.754l-1.517 6.825A1.5 1.5 0 0 1 9.896 15H4.104a1.5 1.5 0 0 1-1.464-1.175Z"/>
+                        <path d="m4.4.8-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 3.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8Zm3 0-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 6.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8Zm3 0-.003.004-.014.019a4.077 4.077 0 0 0-.204.31 2.337 2.337 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.198 3.198 0 0 1-.202.388 5.385 5.385 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 9.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8Z"/>
+                    </svg>
+                    <span>Buy Me A Coffee</span>
+                </a>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</div>
+
+<footer class="footer p-0">
+    <div class="container">
+        <hr>
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6">
+                <div class="copyright">
+                    © 2022 <a href="/">GitDownloadManager.com</a> <small>v.{{serviceVersion}}</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav nav-footer justify-content-md-end justify-content-sm-start">
+                    <li class="nav-item">
+                        <a href="/p/privacy-policy" class="nav-link">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/p/contact-me" class="nav-link">Contact Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/p/faq" class="nav-link">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,36 @@
+ostypes: "linux"
+archtypes: "amd64"
+
+services:
+  - dmweb
+#  - dmapi
+  - dmcli
+#  - gitd
+
+dmweb:
+  path: "../dmweb/"
+  dest: "../build/prod/dmweb/"
+  output: "dmweb"
+  copyto: ".env dmweb.service assets"
+  senv: "prod"
+
+#dmapi:
+#  path: "../dmapi/"
+#  dest: "../build/prod/dmapi/"
+#  output: "dmapi"
+#  copyto: ".env dmapi.service"
+#  senv: "prod"
+
+dmcli:
+  path: "../dmcli/"
+  dest: "../build/prod/dmcli/"
+  output: "dmcli"
+  copyto: "*.prod.yaml sh"
+  senv: "prod"
+
+#gitd:
+#  path: "../gitd/"
+#  dest: "../build/prod/gitd/"
+#  output: "gitd"
+#  copyto: ".gitd.yaml"
+#  senv: "prod"

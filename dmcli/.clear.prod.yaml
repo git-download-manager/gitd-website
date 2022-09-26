@@ -1,0 +1,2 @@
+temp-dir: /usr/local/gitd-temp/clone/
+temp-dir-lifetime: 30

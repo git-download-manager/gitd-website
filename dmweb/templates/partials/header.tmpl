@@ -1,0 +1,42 @@
+<nav id="navbar-main" class="navbar navbar-expand flex-column flex-md-row border-bottom">
+    <a class="navbar-brand mr-0" href="/">
+        <img width="130px" height="40px" alt="Gitd - Git Download manager" src="/assets/img/gitd_logo.png">
+    </a>
+    <div class="navbar-nav flex-grow-1">
+        <form method="post" action="javascript:void(0);" class="flex-fill">
+            <div class="form-row">
+                <div x-bind:class="gitUrlValid ? '' : 'has-danger1'" class="form-group mb-0 col-md-12 col-lg-12">
+                    <input 
+                        x-model="gitUrl" 
+                        x-bind:class="gitUrlValid ? '' : 'is-invalid'":class="loading ? 'disabled' : ''":disabled="loading"
+                        x-on:keydown="resetSection"
+                        autofocus 
+                        id="searcherInput" 
+                        class="form-control form-control-alternative1 mr-lg-5" 
+                        placeholder="Github or Gitlab or Bitbucket repo root URL or sub-folder URL" 
+                        type="url"
+                        pattern="https://.*" 
+                        name="query" 
+                        value=""
+                    >
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="ml-2">
+        <a href="javascript:void(0);" x-bind:class="loading ? 'disabled' : ''":disabled="loading" @click="submitAction('view', '')" class="btn btn-default">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+            </svg>
+            <span class="nav-link-inner--text">View</span>
+        </a>
+        <a href="javascript:void(0);" x-bind:class="loading ? 'disabled' : ''":disabled="loading" @click="submitAction('download', '')" class="btn btn-warning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            <span class="nav-link-inner--text">Download</span>
+        </a>
+    </div>
+</nav>

@@ -1,0 +1,38 @@
+<template aria-label="homepage" x-if="homeSection">
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-grid justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-3">New `git export` command <span class="text-warning">Gitd Download Manager</span></h2>
+                    <p class="lead">Github.com, Bitbucket.org, Gitlab.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.</p>
+                    <p class="text-muted">
+                        Supported Git Url List 
+                        <a href="javascript:void(0);" @click.away="modal = false" @click="toggleModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                        </a>
+                    </p>
+
+                    <div class="text-center">
+                        <h4 class="display-4 mb-3 mt-5 border-bottom">Available on these stores</h4>
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                                <a href="{{option "chrome-store-url"}}" target="_blank">
+                                    <img src="assets/img/chrome_store.png" class="img-fluid">
+                                </a>
+                                <a href="{{option "firefox-addons-url"}}" target="_blank">
+                                    <img src="assets/img/firefox_addon.png" class="img-fluid">
+                                </a>
+                                <a href="{{option "microsoft-edge-addons-url"}}" target="_blank">
+                                    <img src="assets/img/microsoft_edge_addon.png" class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
