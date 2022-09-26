@@ -1,0 +1,5 @@
+# Stats Collector
+#59 23 * * * cd /usr/local/bin/dmcli/ && ./dmcli stats --config .stats.prod.yaml >> /var/log/gitdm/cron/stats_$(date --utc +\%Y\%m\%d).log
+
+# Expire Folders Collector
+#*/20 * * * * cd /usr/local/bin/dmcli/ && ./dmcli clear --config .clear.prod.yaml >> /var/log/gitdm/cron/clear.log

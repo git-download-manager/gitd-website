@@ -1,0 +1,59 @@
+<template aria-label="homepage" x-if="homeSection">
+    <div class="section p-0 py-3 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card border">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Which websites does it support?</li>
+                        </ul>
+                        <div class="card-body">
+                            <p class="card-text">
+                                - Supported platforms: Github.com, Gitlab.com, Bitbucket.org.<br>
+                                - Currently, public repositories supported only.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Does the service have any limits?</li>
+                        </ul>
+                        <div class="card-body">
+                            <p class="card-text">
+                                - Multi slashes branch names not parse from url yet. First you can view main repository after write branch input to your branch name and click view button again. (Example: https://github.com/cli/cli/tree/marwan/localcs -> Branch Name: "marwan/localcs")<br>
+                                - Browser based download process covers only {{getLimit "max-select"}} selection and maximum {{getLimit "max-file"}} files.<br>
+                                - Private repositories not supported yet.<br>
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Website Made With</li>
+                        </ul>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Frontend: <br>
+                                - <a href="https://github.com/creativetimofficial/argon-design-system" target="_blank"><strong>Argon Design System</strong></a> for template<br> 
+                                - <a href="https://alpinejs.dev" target="_blank"><strong>Alpinejs</strong></a> for DOM manipulation<br> 
+                                - <a href="https://github.com/101arrowz/fflate" target="_blank"><strong>fflate</strong></a> for generate zip packages<br>
+                                - <a href="https://icons.getbootstrap.com" target="_blank"><strong>Bootstrap Icons</strong></a> for svg icons<br>
+                                - <a href="https://www.photopea.com" target="_blank"><strong>Photopea</strong></a> for create logo, icon and favicon<br>
+                            </p>
+                            <p class="card-text">
+                                Backend: <br>
+                                - <a href="https://www.nginx.com" target="_blank"><strong>Nginx</strong></a> for reverse proxy and http server<br>
+                                - <a href="https://gofiber.io" target="_blank"><strong>GoFiber</strong></a> for web framework<br>
+                                - <a href="https://letsencrypt.org" target="_blank"><strong>Let's Encrypt</strong></a> for free ssl certificate<br>
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Support Me (Referral Links)</li>
+                        </ul>
+                        <div class="card-body">
+                            <p class="card-text">
+                                - <a href="https://m.do.co/c/7d2b60c06d34" target="_blank">DigitalOcean</a><br> 
+                                - <a href="https://hetzner.cloud/?ref=0RPw5XrOHCyq" target="_blank">Hetzner</a><br> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

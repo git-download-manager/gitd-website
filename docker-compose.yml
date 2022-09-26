@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+#  dmapi:
+#    image: dmapi:latest
+#    build:
+#      context: ./dmapi
+#      args:
+#        ENV_FILE: .dev.env
+#    container_name: dmapi
+#    restart: always
+#    ports:
+#      - "3002:3002"
+#    networks:
+#      - gitd-net
+#    volumes:
+#      - ./gitd-temp:/usr/local/gitd-temp
+  dmweb:
+    image: dmweb:latest
+    build:
+      context: ./dmweb
+      args:
+        ENV_FILE: .dev.env
+    container_name: dmweb
+    restart: always
+    ports:
+      - "3001:3001"
+    networks:
+      - gitd-net
+  dmcli:
+    image: dmcli:latest
+    build:
+      context: ./dmcli
+    container_name: dmcli
+    networks:
+      - gitd-net
+networks:
+  gitd-net:

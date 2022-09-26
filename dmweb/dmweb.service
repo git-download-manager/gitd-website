@@ -1,0 +1,16 @@
+[Unit]
+Description=dmweb manage service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/dmweb/dmweb --env-file .env
+WorkingDirectory=/usr/local/bin/dmweb
+Restart=always
+RestartSec=5s
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=dmweb.service
+
+[Install]
+WantedBy=multi-user.target

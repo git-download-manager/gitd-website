@@ -1,0 +1,36 @@
+ostypes: "none"
+archtypes: "none"
+
+services:
+  - dmweb
+#  - dmapi
+  - dmcli
+#  - gitd
+
+dmweb:
+  path: "../dmweb/"
+  dest: "../build/dev/dmweb/"
+  output: "dmweb"
+  copyto: "*.dev.env *.service assets"
+  senv: "dev"
+
+#dmapi:
+#  path: "../dmapi/"
+#  dest: "../build/dev/dmapi/"
+#  output: "dmapi"
+#  copyto: "*.dev.env *.service"
+#  senv: "dev"
+
+dmcli:
+  path: "../dmcli/"
+  dest: "../build/dev/dmcli/"
+  output: "dmcli"
+  copyto: "*.yaml sh"
+  senv: "dev"
+
+#gitd:
+#  path: "../gitd/"
+#  dest: "../build/dev/gitd/"
+#  output: "gitd"
+#  copyto: "*.yaml"
+#  senv: "dev"

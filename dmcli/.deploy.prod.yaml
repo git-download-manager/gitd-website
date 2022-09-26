@@ -1,0 +1,18 @@
+ipaddr: IP_ADDR # your server ip addr
+domain: DOMAIN_NAME # your domain name
+
+services:
+  - dmweb
+#  - dmapi
+
+dmweb:
+  foldername: "dmweb"
+  filename: "dmweb"
+  httpaddr: localhost
+  subdomain: ""
+
+#dmapi:
+#  foldername: "dmapi"
+#  filename: "dmapi"
+#  httpaddr: localhost
+#  subdomain: "api."

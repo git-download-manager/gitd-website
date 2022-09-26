@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{.Title}}</title>
+
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+</head>
+<body>
+    {{template "templates/partials/header" .}}
+
+    <div class="wrapper">
+        {{embed}}
+
+        {{template "templates/partials/footer" .}}
+    </div>
+    <!-- ./wrapper -->
+</body>
+</html>
