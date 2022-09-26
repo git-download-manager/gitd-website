@@ -1,5 +1,7 @@
 # Gitd Main Website
-Website of GitDownloadManager.com
+Website of [GitDownloadManager.com](https://gitdownloadmanager.com)
+
+![screenshot](data/screenshots/gitdownloadmanager.com-home.jpeg)
 
 > Website source code with cli tools for build, upload, deploy, collect stats etc...
 ## Build
