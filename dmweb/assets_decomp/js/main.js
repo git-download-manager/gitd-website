@@ -69,7 +69,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     validateGitUrl() {
-      const regex = /https:\/\/(github\.com|bitbucket\.org|gitlab\.com)(\S+)(\/|\/([\w#!:.?+=&%@!\-\/]))?/sg;
+      const regex = /https:\/\/(github\.com|bitbucket\.org|gitlab\.com|gitea\.com)(\S+)(\/|\/([\w#!:.?+=&%@!\-\/]))?/sg;
       this.gitUrlValid = regex.test(this.gitUrl)
     },
 
@@ -132,7 +132,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     // limitations
-    selectListLimit: 5, // select max file or folder in current tree list
+    selectListLimit: 10, // select max file or folder in current tree list
 
     // Fetch Objects
     currentBranch: "",
