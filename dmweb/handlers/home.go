@@ -6,7 +6,7 @@ import (
 
 func Home() fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		return c.Render("templates/home", fiber.Map{
+		return c.Render("home", fiber.Map{
 			"Title": "Gitd Download Manager - gitd export",
 		})
 	}

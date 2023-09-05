@@ -26,7 +26,7 @@ func PageDetail() fiber.Handler {
 			return c.Next()
 		}
 
-		return c.Render("templates/"+template, fiber.Map{
+		return c.Render(template, fiber.Map{
 			"Title": title,
 		})
 	}

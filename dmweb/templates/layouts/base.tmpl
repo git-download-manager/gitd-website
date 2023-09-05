@@ -29,7 +29,7 @@
     <script type="text/javascript" src="/assets/js/alpine.min.js" defer></script>
     <script type="text/javascript" src="/assets/js/fflate.min.js"></script>
 
-    {{if and (isNotBot .ua) (ne (option "analytics-ua") "") }}
+    {{if ne (option "analytics-ua") "" }}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{option "analytics-ua"}}"></script>
     <script>
@@ -42,7 +42,7 @@
     {{end}}
 </head>
 <body x-data="gitdManager" x-init="selectListLimit = {{getLimit "max-select"}}; $watch('homeSection', (value, oldValue) => (value) ? gitBranch = '' : '' )" @keydown.escape="modal = false">
-    {{template "templates/partials/header" .}}
+    {{template "partials/header" .}}
 
     <div class="wrapper">
         {{embed}}
@@ -185,7 +185,7 @@
             </div>
         </template>
 
-        {{template "templates/partials/footer" .}}
+        {{template "partials/footer" .}}
     </div>
     <!-- ./wrapper -->
 
@@ -200,7 +200,7 @@
                         </button>
                     </div>
                     <div class="modal-body bg-white py-0">
-                        <p class="lead">Github, Gitlab, Bitbucket services fully supported.</p>
+                        <p class="lead">Github, Gitlab, Bitbucket, Gitea services fully supported.</p>
                         <p class="description">https://&lt;service&gt;/&lt;owner&gt;/&lt;repo&gt;/<br>
                         https://&lt;service&gt;/&lt;owner&gt;/&lt;repo&gt;.git<br>
                         https://&lt;service&gt;/&lt;owner&gt;/&lt;repo&gt;/blob/&lt;branch&gt;/&lt;file&gt;.&lt;ext&gt;<br>
