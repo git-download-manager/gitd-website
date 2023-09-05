@@ -4,7 +4,7 @@
             <div class="row row-grid justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="display-3">New `git export` command <span class="text-warning">Gitd Download Manager</span></h2>
-                    <p class="lead">Github.com, Bitbucket.org, Gitlab.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.</p>
+                    <p class="lead">Github.com, Bitbucket.org, Gitlab.com, (partly) Gitea.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.</p>
                     <p class="text-muted">
                         Supported Git Url List 
                         <a href="javascript:void(0);" @click.away="modal = false" @click="toggleModal">
@@ -19,13 +19,13 @@
                         <h4 class="display-4 mb-3 mt-5 border-bottom">Available on these stores</h4>
                         <div class="row justify-content-center">
                             <div class="col-md-12">
-                                <a href="{{option "chrome-store-url"}}" target="_blank">
+                                <a href="{{option "chrome-store-url"}}" target="_blank" title="Best extensions store - Google Chrome Store">
                                     <img src="assets/img/chrome_store.png" class="img-fluid">
                                 </a>
-                                <a href="{{option "firefox-addons-url"}}" target="_blank">
+                                <a href="{{option "firefox-addons-url"}}" target="_blank" title="Mozilla Addons reviewer not allowed Gitd Extension because of includes min files and alpine template engine. I dont understand!!!">
                                     <img src="assets/img/firefox_addon.png" class="img-fluid">
                                 </a>
-                                <a href="{{option "microsoft-edge-addons-url"}}" target="_blank">
+                                <a href="{{option "microsoft-edge-addons-url"}}" target="_blank" title="Microsoft Account not allowed! I dont understand!!!">
                                     <img src="assets/img/microsoft_edge_addon.png" class="img-fluid">
                                 </a>
                             </div>

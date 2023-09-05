@@ -1,23 +1,22 @@
 package main
 
 import (
-	"embed"
 	"flag"
-	"github.com/git-download-manager/gitd-website/dmweb/loggers"
-	"github.com/git-download-manager/gitd-website/dmweb/middlewares"
-	"net/http"
 	"os"
 	"os/signal"
-	"regexp"
 	"strings"
 	"syscall"
+	"time"
+
+	"github.com/git-download-manager/gitd-website/dmweb/loggers"
+	"github.com/git-download-manager/gitd-website/dmweb/middlewares"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/favicon"
 	fiberlogger "github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	"github.com/gofiber/template/html"
+	"github.com/gofiber/template/html/v2"
 	"github.com/peterbourgon/ff/v3"
 	"go.uber.org/zap"
 )
@@ -41,9 +40,6 @@ var (
 	_                   = fs.String("env-file", ".env", "env file")
 )
 
-//go:embed templates/*
-var viewsfs embed.FS
-
 func main() {
 	// Zap Logger Init
 	loggers.SetupPlainLogger(ServiceName, ServiceVersion)
@@ -63,14 +59,14 @@ func main() {
 	}
 
 	// Fiber Init
-	engine := html.NewFileSystem(http.FS(viewsfs), ".tmpl")
+	engine := html.New("./templates", ".tmpl")
 	engine.AddFunc("serviceVersion", func() string {
 		return ServiceVersion
 	}).AddFunc("canonicalUrl", func() string {
 		return *domainName
 	}).AddFunc("option", func(key string) string {
 		option := map[string]string{
-			"description":               "Github.com, Bitbucket.org, Gitlab.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.",
+			"description":               "Github.com, Bitbucket.org, Gitlab.com, Gitea.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.",
 			"twitter":                   "",
 			"chrome-store-url":          "https://chrome.google.com/webstore/detail/gitd-download-manager/cbnplpkljokdodpligcaolkmodfondhl",
 			"firefox-addons-url":        "https://addons.mozilla.org/en-US/firefox/addon/gitd-download-manager/",
@@ -85,18 +81,19 @@ func main() {
 			"max-file":   *gitdLimitTreeList,
 		}
 		return limits[key]
-	}).AddFunc("isNotBot", func(userAgent string) bool {
-		var re = regexp.MustCompile(`(?i)bot|crawl|curl|dataprovider|search|get|Insights|Lighthouse|spider|find|java|majesticsEO|google|yahoo|teoma|contaxe|yandex|libwww-perl|facebookexternalhit`)
+	}) /*.AddFunc("isNotBot", func(userAgent string) bool {
+		return true
+		// var re = regexp.MustCompile(`(?i)bot|crawl|curl|dataprovider|search|get|Insights|Lighthouse|spider|find|java|majesticsEO|google|yahoo|teoma|contaxe|yandex|libwww-perl|facebookexternalhit`)
 
-		return len(re.FindStringIndex(userAgent)) == 0
-	})
+		// return len(re.FindStringIndex(userAgent)) == 0
+	})*/
 
 	app := fiber.New(fiber.Config{
 		Prefork:       *httpPrefork,
 		CaseSensitive: true,
-		AppName:       ServiceName + " v" + ServiceVersion,
+		AppName:       ServiceName + " " + ServiceVersion,
 		Views:         engine,
-		ViewsLayout:   "templates/layouts/base",
+		ViewsLayout:   "layouts/base",
 		ErrorHandler:  middlewares.ErrorHandler,
 	})
 
@@ -109,12 +106,12 @@ func main() {
 	}))
 	app.Use(middlewares.HeaderConf(ServiceVersion))
 	app.Use(fiberlogger.New(fiberlogger.Config{
-		Format: "[${ip}]:${port} ${status} - ${latency} ${method} ${path} ${queryParams}\n",
+		Format: "[${ip}]:${port} ${locals:requestid} ${status} - ${latency} ${method} ${path} ${queryParams}\n",
 	}))
+	app.Use(favicon.New())
 	app.Use(recover.New()) // Sometime need to recover all
 
 	// Routes
-	app.Use(favicon.New(), middlewares.UserAgent())
 	setupRoutes(app)
 
 	// 404 Middleware
@@ -123,7 +120,7 @@ func main() {
 	go func() {
 		err = app.Listen(*httpAddr)
 		if err != nil {
-			loggers.Plain.Fatal("http server stopped", zap.String("err", err.Error()))
+			loggers.Plain.Fatal("stop.http.server", zap.Error(err))
 		}
 	}()
 
@@ -132,6 +129,9 @@ func main() {
 	signal.Notify(close, syscall.SIGINT, syscall.SIGTERM)
 
 	<-close
+
+	// shutdown server
+	app.ShutdownWithTimeout(3 * time.Second)
 
 	// Bye bye
 	loggers.Plain.Info("im shutting down. see you later")

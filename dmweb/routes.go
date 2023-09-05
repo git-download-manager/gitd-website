@@ -11,7 +11,7 @@ func setupRoutes(app *fiber.App) {
 	// Routes with Handlers
 
 	// Robot Txt
-	app.Get("/robot.txt", handlers.RobotTxt()).Name("gitdm.robot.txt")
+	app.Get("/robots.txt", handlers.RobotsTxt()).Name("gitdm.robots.txt")
 
 	// Home
 	app.Get("/", handlers.Home()).Name("gitdm.home")
