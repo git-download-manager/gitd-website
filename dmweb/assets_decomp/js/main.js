@@ -69,7 +69,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     validateGitUrl() {
-      const regex = /https:\/\/(github\.com|bitbucket\.org|gitlab\.com|gitea\.com)(\S+)(\/|\/([\w#!:.?+=&%@!\-\/]))?/sg;
+      const regex = /https:\/\/(github\.com|bitbucket\.org|gitlab\.com|gitea\.com|gitee\.com)(\S+)(\/|\/([\w#!:.?+=&%@!\-\/]))?/sg;
       this.gitUrlValid = regex.test(this.gitUrl)
     },
 

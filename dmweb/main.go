@@ -66,7 +66,7 @@ func main() {
 		return *domainName
 	}).AddFunc("option", func(key string) string {
 		option := map[string]string{
-			"description":               "Github.com, Bitbucket.org, Gitlab.com, Gitea.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.",
+			"description":               "Github.com, Bitbucket.org, Gitlab.com, Gitea.com, Gitee.com provides all of the public repos in git services to download selected files and folders as a zip files with a single click, without the need for any API key or token.",
 			"twitter":                   "",
 			"chrome-store-url":          "https://chrome.google.com/webstore/detail/gitd-download-manager/cbnplpkljokdodpligcaolkmodfondhl",
 			"firefox-addons-url":        "https://addons.mozilla.org/en-US/firefox/addon/gitd-download-manager/",
